@@ -73,7 +73,7 @@ def create_image(db: Session, news_id: int, url: str):
 def create_news(db: Session, news: schemas.NewsCreate):
     category = get_or_create_category(db, news.news_category, f"{news.news_category} description")
     reporter = get_or_create_reporter(db, news.news_reporter, f"{news.news_reporter}@example.com")
-    publisher = get_or_create_publisher(db, news.news_publisher, f"https://{news.publisher_website}")
+    # publisher = get_or_create_publisher(db, news.news_publisher, f"https://{news.publisher_website}")
     news_exist = get_news_existance(db, news_title=news.title)
 
     if news_exist:
@@ -87,7 +87,7 @@ def create_news(db: Session, news: schemas.NewsCreate):
         link=news.link,
         category_id=category.id,
         reporter_id=reporter.id,
-        publisher_id=publisher.id
+        # publisher_id=publisher.id
     )
     db.add(db_news)
     db.commit()
@@ -100,7 +100,7 @@ def create_news(db: Session, news: schemas.NewsCreate):
     db_news = db.query(models.News).options(
         joinedload(models.News.category),
         joinedload(models.News.reporter),
-        joinedload(models.News.publisher)
+        # joinedload(models.News.publisher)
     ).filter(models.News.id == db_news.id).first()
 
     return db_news

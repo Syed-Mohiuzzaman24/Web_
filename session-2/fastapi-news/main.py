@@ -11,9 +11,8 @@ app = FastAPI(
     description="This is the API documentation for News Summary generating by AI.",
     # terms_of_service="http://example.com/terms/",
     contact={
-        "name": "Kalim Amzad",
-        "url": "https://growwithdata.net",
-        "email": "kalim.amzad.chy@gmail.com",
+        "name": "Syed Mohiuzzaman",
+        "email": "syedshawon24@gmail.com",
     },
     # license_info = {
     #     "name": "MIT License",

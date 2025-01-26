@@ -70,10 +70,10 @@ class NewsBase(BaseModel):
 
 
 class NewsCreate(NewsBase):
-    news_publisher: str
+    # news_publisher: str
     news_reporter: str
     news_category: str
-    publisher_website: str
+    # publisher_website: str
     images: List[str] = []
 
 
